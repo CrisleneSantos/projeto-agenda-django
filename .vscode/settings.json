@@ -1,0 +1,31 @@
+{"python.pythonPath": "C:/Users/crisl/PYTHON/Projetc/venv/Scripts/python.exe",
+  "workbench.startupEditor": "none",
+  "explorer.compactFolders": false,
+  "editor.fontSize": 18,   
+  "terminal.integrated.fontSize": 14,
+  "editor.rulers": [80, 120],
+  "code-runner.runInTerminal": true,
+  "code-runner.clearPreviousOutput": true,
+  "workbench.colorTheme": "OM Theme (Default Dracula Italic)",
+  "workbench.iconTheme": "material-icon-theme",
+  "code-runner.executorMap": {
+    "python": "cls ; python -u"
+  },
+  "code-runner.ignoreSelection": true,
+  "python.linting.mypyEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.analysis.diagnosticSeverityOverrides": {},
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportUnknownMemberType": "none",
+    "reportUnknownArgumentType": "none",
+    "reportUnknownVariableType": "none",
+    "reportUnknownLambdaType": "none",
+    "reportUnknownParameterType": "none"
+  },
+    "python.defaultInterpreterPath": "./venv/bin/python",
+  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.typeCheckingMode": "basic",
+  "cSpell.enabled": true,
+  "python.formatting.provider": "None",
+}
