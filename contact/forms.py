@@ -1,6 +1,7 @@
 from collections.abc import Mapping
 from typing import Any
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 from django.core.files.base import File
 from django.db.models.base import Model
@@ -10,6 +11,14 @@ from django.utils import timezone
 from . import models
 
 class ContactForm(forms.ModelForm):
+    picture = forms.ImageField(
+        widget= forms.FileInput(
+            attrs={
+                'accept' : 'image/*',
+            }
+        )
+    )
+
     first_name = forms.CharField(
         widget=forms.TextInput(
             attrs={
@@ -23,11 +32,14 @@ class ContactForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
+    
     class Meta:
         model = models.Contact
         fields = (
             'first_name', 'last_name', 'phone',
-            'email', 'description', 'category'
+            'email', 'description', 'category',
+            'picture',
         )
     def clean(self):
         cleaned_data = self.cleaned_data
@@ -53,20 +65,6 @@ class ContactForm(forms.ModelForm):
                 )
             )
         return first_name
-"""def create(request):
-    if request.method == 'POST':
-        context = {
-            'form': ContactForm(request.POST)
-        }
-        return render(
-            request,
-            'contact/create.html',
-            context
-        )
-    context = {
-        'form': ContactForm()
-    }
-    return render(
-        request,
-        'contact/create.html')"""
 
+class RegisterForm(UserCreationForm):
+    ...
